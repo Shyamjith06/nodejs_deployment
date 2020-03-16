@@ -8,7 +8,7 @@ node {
   dir(project_path){
   
   stage('ansible deploy'){
-  sh label: 'ansible', script: 'ansible-playbook playbook.yml -u Shyam -i ansible/inventory'
+  sh label: 'ansible', script: 'ansible-playbook playbook.yml -u Shyam -i inventory'
 }
 }
 }
