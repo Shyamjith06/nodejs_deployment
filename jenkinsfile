@@ -1,15 +1,16 @@
 node {
 
   stage('Git-Checkout') {
-  git 'https://github.com/Shyamjith06/nodejs_deployment.git'
+  git branch:'feature_1', url:'https://github.com/Shyamjith06/nodejs_deployment.git'
   }
-  def project_path="ansible/"
   
-  dir(project_path){
-  
+  def ansible_path="ansible/"
+  dir(ansible_path)
+  {
   stage('ansible deploy'){
   sh label: 'ansible', script: 'ansible-playbook playbook.yml -u Shyam -i inventory'
 }
 }
 }
+
 
